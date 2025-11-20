@@ -9,108 +9,71 @@ body {
 }
 
 /* NAVBAR */
-/* BASE NAVBAR STYLE */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 15px 20px;
   background: #0b1d39;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  flex-wrap: wrap; /* allow wrapping if needed */
 }
 
-.navbar img {
-  width: 180px;
-  height: auto;
+.navbar .logo img {
+  height: 45px;
 }
 
-.navbar ul {
+.navbar nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 15px;
+  flex-wrap: wrap; /* keep horizontal but wrap if needed */
 }
 
-.navbar ul li a {
+.navbar nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  font-size: 1rem;
+  white-space: nowrap; /* prevents text from breaking */
 }
 
-.navbar ul li a:hover {
-  color: #f7c948;
+.navbar .btn-quote {
+  background: #ff7b00;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
-/* RESPONSIVE FIXES */
-@media (max-width: 900px) {
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    padding: 10px 20px;
+    justify-content: space-around; /* spread items out to fit */
+    padding: 10px;
   }
 
-  .navbar img {
-    width: 140px;
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .navbar ul li a {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .navbar ul li a {
-    font-size: 0.95rem;
-  }
-
-  .navbar img {
-    width: 110px;
-  }
-}
-
-/* --- MOBILE NAVBAR FIX (only affects small screens) --- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
-  }
-
-  /* keep logo + nav links on same row */
-  .navbar .logo,
-  .navbar nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  .navbar .logo img {
+    height: 40px;
   }
 
   .navbar nav ul {
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px; /* smaller gap between links */
   }
 
-  /* center Get a Quote button beneath */
-  .btn-quote {
-    margin-top: 10px;
-    align-self: center;
+  .navbar nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  .navbar .btn-quote {
+    padding: 6px 15px;
+    font-size: 0.85rem;
   }
 }
+
 
 
 
@@ -533,7 +496,7 @@ footer {
     cursor: pointer;
   }
 
- /* INSURANCE STREAMING MARQUEE - Responsive Version */
+/* INSURANCE STREAMING MARQUEE - Responsive Version */
 .insurance-section {
     background: #fff; /* white background */
     text-align: center;
@@ -633,4 +596,56 @@ footer {
     transform: scale(1.2);
     filter: drop-shadow(0 0 12px #ff7b00);
   }
-  
+
+
+
+.reviews {
+  background: #0f2a4b;
+  padding: 100px 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  color: #ff7b00;
+  margin-bottom: 10px;
+}
+
+.reviews p {
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.google-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background: #142d56;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.stars {
+  color: #ff7b00;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.reviewer {
+  color: #ff7b00;
+  font-weight: 600;
+  margin-top: 10px;
+}
